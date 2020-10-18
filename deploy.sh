@@ -1,4 +1,4 @@
-yarn build &&
+npm run build &&
 git checkout page  &&
 rm -rf *.html *.css *.js *.jpg  &&
 mv dist/* ./  &&
