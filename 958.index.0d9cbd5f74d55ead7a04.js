@@ -1,0 +1,1 @@
+(self.webpackChunkdemo1=self.webpackChunkdemo1||[]).push([[958],{958:(e,u,s)=>{"use strict";function t(){alert("懒加载函数呀")}s.r(u),s.d(u,{default:()=>t})}}]);
