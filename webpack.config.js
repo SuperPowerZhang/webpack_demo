@@ -23,6 +23,64 @@ module.exports = {
         // 必须是绝对路径（使用 Node.js 的 path 模块）
         filename: 'index.[hash].js'// string}
     },
-    module: {},
+    module: {
+        rules: [
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    },
+                ],
+            },
+            {
+                test: /\.styl$/i,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                    },
+                    {
+                        loader: 'stylus-loader',
+                    },
+                ],
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    {
+                        loader: 'style-loader',
+                    },
+                    {
+                        loader: 'css-loader',
+                    },
+                    {
+                        loader: 'less-loader',
+                        options: {
+                            lessOptions: {
+                                strictMath: true,
+                            },
+                        },
+                    },
+                ],
+            },
+            {
+                test: /\.scss$/i,
+                use: [
+                    // 将 JS 字符串生成为 style 节点
+                    'style-loader',
+                    // 将 CSS 转化成 CommonJS 模块
+                    'css-loader',
+                    // 将 Sass 编译成 CSS
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            implementation: require('dart-sass'),
+                        }
+                    }
+                ],
+            },
+        ],
+    },
 
 }

@@ -14,6 +14,7 @@ module.exports = {
     }, // devtools和devServer是开发才用的
     module: {
         rules: [
+            ...base.module.rules,
             {
                 test: /\.css$/,
                 use: [
