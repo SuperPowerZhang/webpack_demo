@@ -3,7 +3,7 @@ import './index.less'
 import './z.styl'
 import jpg from './duck.jpg'
 
-console.log(x)
+console.log('hello')
 console.log(jpg);
 let jpgDiv = document.getElementById("jpg")
 jpgDiv.innerHTML = `
